@@ -1,0 +1,15 @@
+import regedit from 'regedit';
+
+exports.regFunction = async (baseName) => { 
+    try {
+        regedit.list(['HKCU\\SOFTWARE\\'+baseName], function(err, result) {
+            console.log('err :>> ', err);
+            console.log('result :>> ', result);
+        })
+    } catch (error) {
+        console.log('error :>> ', error);
+    }
+}
+
+this.regFunction('ass')
+this.regFunction('Kodi')
